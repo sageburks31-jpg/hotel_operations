@@ -5,8 +5,6 @@ public class Reservation {
     private int numberOfNights;
     private boolean stayOverWeekend;
 
-    public Reservation() {}
-
     public Reservation(String roomType, int numberOfNights, boolean stayOverWeekend) {
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
@@ -28,16 +26,12 @@ public class Reservation {
     }
 
     public int getNumberOfNights() {return numberOfNights;}
-    public void setNumberOfNights(int numberOfNights) {
-        this.numberOfNights = numberOfNights;
-    }
+    public void setNumberOfNights(int numberOfNights) {this.numberOfNights = numberOfNights;}
 
     public boolean isStayOverWeekend() {return stayOverWeekend;}
-    public void setStayOverWeekend(boolean stayOverWeekend) {
-        this.stayOverWeekend = stayOverWeekend;
-    }
+    public void setStayOverWeekend(boolean stayOverWeekend) {this.stayOverWeekend = stayOverWeekend;}
 
     public String toRow() {
-        return "Room Type: "+getRoomType()+" | Number Of Nights: "+getNumberOfNights()+" | is Staying Over the Weekend: "+isStayOverWeekend();
+        return "Room Type: "+getRoomType()+" | Number Of Nights: "+getNumberOfNights()+" | is Staying Over the Weekend: "+isStayOverWeekend()+" | Room Price: "+getRoomPrice();
     }
 }
