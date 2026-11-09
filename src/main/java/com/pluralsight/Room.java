@@ -14,12 +14,16 @@ public class Room {
     }
 
     public int getNumberOfBeds() {return numberOfBeds;}
+    public void setNumberOfBeds(int numberOfBeds) {this.numberOfBeds = numberOfBeds;}
 
     public double getPrice() {return price;}
+    public void setPrice(double price) {this.price = price;}
 
     public boolean isOccupied() {return Occupied;}
+    public void setOccupied(boolean occupied) {Occupied = occupied;}
 
     public boolean isDirty() {return Dirty;}
+    public void setDirty(boolean dirty) {Dirty = dirty;}
 
     public String toRow() {
         return "Number Of Beds: "+getNumberOfBeds()+" | Price: "+getPrice()+" | is Dirty: "+isDirty()+" | is Occupied: "+isOccupied();
