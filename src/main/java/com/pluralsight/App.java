@@ -50,6 +50,7 @@ public class App {
 
         Hotel hotel1=new Hotel("bobs hotel",10, 12,3,6);
         System.out.println("full hotel \n"+hotel1.toRow());
+        System.out.println("Available Rooms: "+ hotel.getAvailableRooms());
     }
 
     private static void displaySeparatorLine(String prompt){

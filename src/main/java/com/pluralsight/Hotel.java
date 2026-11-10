@@ -30,7 +30,6 @@ public class Hotel {
         }
         return suites;
     }
-
     public int getAvailableRooms() {
         int rooms = 0;
         if ((numberOfRooms - bookedBasicRooms) > rooms) {

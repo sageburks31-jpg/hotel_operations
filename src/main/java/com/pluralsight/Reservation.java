@@ -1,11 +1,10 @@
 package com.pluralsight;
 
 public class Reservation {
-    private String roomType;
-    private int numberOfNights;
-    private boolean stayOverWeekend;
+    private final String roomType;
+    private final int numberOfNights;
+    private final boolean stayOverWeekend;
 
-    public Reservation() {}
     public Reservation(String roomType, int numberOfNights, boolean stayOverWeekend) {
         this.roomType = roomType;
         this.numberOfNights = numberOfNights;
@@ -25,10 +24,7 @@ public class Reservation {
     }
 
     public int getNumberOfNights() {return numberOfNights;}
-    public void setNumberOfNights(int numberOfNights) {this.numberOfNights = numberOfNights;}
-
     public boolean isWeekend() {return stayOverWeekend;}
-    public void setStayOverWeekend(boolean stayOverWeekend) {this.stayOverWeekend = stayOverWeekend;}
 
     public String toRow() {
         return "Room Type: "+getRoomType()+" | Number Of Nights: "+getNumberOfNights()+" | is Staying Over the Weekend: "+isWeekend()+" | Room Price: "+getPrice();
