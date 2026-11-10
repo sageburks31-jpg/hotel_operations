@@ -38,6 +38,18 @@ public class App {
 
         System.out.println(employee.toRow());
         displaySeparatorLine(employee.toRow());
+
+        //Hotel
+        Hotel hotel=new Hotel("Lakeside Inn", 2, 10);
+        System.out.println("blank hotel \n"+hotel.toRow());
+        for (int i = 1; i < 4; i++) {
+            hotel.bookRoom(i,true);
+            System.out.println("Available Suites: "+ hotel.getAvailableSuites());
+        }
+        System.out.println(hotel.toRow());
+
+        Hotel hotel1=new Hotel("bobs hotel",10, 12,3,6);
+        System.out.println("full hotel \n"+hotel1.toRow());
     }
 
     private static void displaySeparatorLine(String prompt){
