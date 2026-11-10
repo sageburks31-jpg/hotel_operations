@@ -30,7 +30,6 @@ public class Room {
     public void setDirty(boolean dirty) {this.dirty = dirty;}
 
     public boolean isAvailable() {return !isOccupied() && !isDirty();}
-
     public String toRow() {
         return "Number Of Beds: "+getNumberOfBeds()+" | Price: "+getPrice()+" | is Dirty: "+isDirty()+" | is Occupied: "+isOccupied()+" | is Available: "+isAvailable();
     }
