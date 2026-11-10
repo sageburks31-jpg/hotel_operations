@@ -24,12 +24,19 @@ public class App {
         //Employee
         Employee employee=new Employee(20021,"bob","server",20,0);
         System.out.println(employee.toRow());
-        employee.punchIn(10);
+        System.out.println("non-overloaded");
 
+        employee.punchIn();
+        System.out.println(employee.toRow());
+        employee.punchout();
+        System.out.println(employee.toRow());
+
+        System.out.println("overloaded");
+        employee.punchIn(10);
         System.out.println(employee.toRow());
         employee.punchout(14);
-        System.out.println(employee.toRow());
 
+        System.out.println(employee.toRow());
         displaySeparatorLine(employee.toRow());
     }
 

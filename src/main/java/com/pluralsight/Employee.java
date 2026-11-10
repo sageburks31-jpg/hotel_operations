@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.*;
+
 public class Employee {
     private int employeeId;
     private String name;
@@ -31,7 +33,14 @@ public class Employee {
         return overtimeHour;
     }
 
-    public void punchIn(int time) {startTime = time;}
+    public void punchIn() {
+        startTime = LocalTime.now().getHour();
+    }
+    public void punchIn(int time) {
+        startTime = time;
+    }
+
+    public void punchout() {hoursWorked = LocalTime.now().getHour() - startTime;}
     public void punchout(int time) {hoursWorked = time - startTime;}
 
     public String toRow() {
