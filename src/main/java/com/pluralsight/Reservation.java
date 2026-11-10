@@ -20,9 +20,7 @@ public class Reservation {
             default -> throw new IllegalStateException("Unexpected value: " + roomType);
         };
         double percentOfPrice=0;
-        if (isWeekend()) {
-            percentOfPrice=originalPrice*.1;
-        }
+        if (isWeekend()) {percentOfPrice=originalPrice*.1;}
         return originalPrice+percentOfPrice;
     }
 

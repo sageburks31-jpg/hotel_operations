@@ -20,12 +20,14 @@ public class Room {
     public void setPrice(double price) {this.price = price;}
 
     public boolean isOccupied() {return occupied;}
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;}
+    public void setOccupied(boolean occupied) {this.occupied = occupied;}
+
+    public void checkIn() {setDirty(true); setOccupied(true);}
+    public void checkOut() {setOccupied(false);}
+    public void cleanRoom() {setDirty(false);}
 
     public boolean isDirty() {return dirty;}
-    public void setDirty(boolean dirty) {
-        this.dirty = dirty;}
+    public void setDirty(boolean dirty) {this.dirty = dirty;}
 
     public boolean isAvailable() {return !isOccupied() && !isDirty();}
 
