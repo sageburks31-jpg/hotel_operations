@@ -22,7 +22,7 @@ public class Room {
 
     public void checkIn() {setDirty(true); setOccupied(true);}
     public void checkOut() {setOccupied(false);}
-    public void cleanRoom() {setDirty(false);}
+    public void cleanRoom() {if (!isOccupied()) {setDirty(false);}}
 
     public boolean isDirty() {return dirty;}
     public void setDirty(boolean dirty) {this.dirty = dirty;}
