@@ -10,24 +10,31 @@ class RoomTest {
     public void checkIn_should_markRoomOccupiedAndDirty() {
         //arrange
         int numberOfBeds = 2;
-        double price = 12;
+        double price = 124;
         boolean occupied = false;
-        boolean dirty = false;
+        boolean dirty = true;
         Room room = new Room(numberOfBeds,price,occupied,dirty);
 
-        //act
+        //act - checks checkIn sets isDirty and isOccupied to true
         room.checkIn();
         //assert
-        assertEquals(!dirty,room.isDirty());
+        assertTrue(room.isDirty());
+        assertTrue(room.isOccupied());
 
-        //act
-        room.checkOut();
-        //assert
-        assertEquals(occupied,room.isOccupied());
-
-        //act
+        //act - checks cleanRoom returns true if occupied is true
         room.cleanRoom();
         //assert
-        assertEquals(dirty,room.isDirty());
+        assertTrue(room.isDirty());
+
+        //act - checks checkOut sets isOccupied to false and leaves dirty alone
+        room.checkOut();
+        //assert
+        assertTrue(room.isDirty());
+        assertFalse(room.isOccupied());
+
+        //act - checks cleanRoom returns false if occupied is false
+        room.cleanRoom();
+        //assert
+        assertFalse(room.isDirty());
     }
 }

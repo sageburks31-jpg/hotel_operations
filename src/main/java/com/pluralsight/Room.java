@@ -20,7 +20,7 @@ public class Room {
     public boolean isOccupied() {return occupied;}
     public void setOccupied(boolean occupied) {this.occupied = occupied;}
 
-    public void checkIn() {setDirty(true); setOccupied(true);}
+    public void checkIn() {if (!occupied) setDirty(true); setOccupied(true);}
     public void checkOut() {setOccupied(false);}
     public void cleanRoom() {if (!isOccupied()) {setDirty(false);}}
 
